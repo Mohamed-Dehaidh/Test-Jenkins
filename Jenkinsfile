@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        CREDENTIALS_ID = "jenkins-UP"
+        CREDENTIALS_ID = "dockerhub-UP"
     }
 
     stages {
