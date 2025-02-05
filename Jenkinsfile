@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = "https://github.com/Mohamed-Dehaidh/Test-Jenkins/blob/main/Dockerfile"
+        DOCKER_IMAGE_NAME = "ubuntu"
         DOCKER_CREDENTIALS_ID = "dockerhub-UP"
     }
 
