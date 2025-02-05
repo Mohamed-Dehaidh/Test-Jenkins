@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = "ubuntu"
+        DOCKER_IMAGE_NAME = "mohameddehaidh/Dockerfile"
         DOCKER_CREDENTIALS_ID = "dockerhub-UP"
     }
 
