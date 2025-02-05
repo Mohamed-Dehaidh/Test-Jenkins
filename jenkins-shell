@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Hello from my Jenkins"
+echo "This script is running on: $(hostname)"
+echo "The current date and time are: $(date)"
+echo "#############################################"
+echo "Jenkins home directory: $JENKINS_HOME"
+echo "#############################################"
+mkdir -p /tmp/my_jenkins_test_directory
+echo "This is a test file" > /tmp/my_jenkins_test_directory/test_file.txt
+echo "Script execution finished."
