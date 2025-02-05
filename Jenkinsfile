@@ -12,7 +12,7 @@ pipeline {
                     sh '''
                         docker build -t Mohamed-Dehaidh/dockerfile:latest .
                         docker login -u "$USERNAME" -p "$PASSWORD"
-                        docker push Mohamed-Dehaidh/Dockerfile:latest
+                        docker push Mohamed-Dehaidh/dockerfile:latest
                     '''
                 }
             }
