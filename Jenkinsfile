@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build and Push Docker Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: "env.CREDENTIALS_ID", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: env.CREDENTIALS_ID, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')] {
                     sh '''
                         docker build -t "${env.DOCKER_IMAGE_NAME}":latest .
                         echo "build done!##########################"
