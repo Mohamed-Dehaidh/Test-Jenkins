@@ -2,19 +2,21 @@ pipeline {
     agent any
 
     environment {
-        CREDENTIALS_ID = "jenkins-UP" // Or your registry credentials ID
-        DOCKER_IMAGE_NAME = "Mohamed-Dehaidh/Test-Jenkins/Test-image" // Update with your details
-        DOCKER_IMAGE_TAG = "latest" // Or a specific tag like build number
+        CREDENTIALS_ID = "dockerhub-UP" // Or your registry credentials ID
+        DOCKER_IMAGE_NAME = "mohameddehaidh/test-image" // Update with your details
     }
 
     stages {
         stage('Build and Push Docker Image') {
             steps {
-                withCredentials([usernamePassword(credentialsId: env.CREDENTIALS_ID, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: "env.CREDENTIALS_ID", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh '''
-                        docker build -t "${env.DOCKER_IMAGE_NAME}:${env.DOCKER_IMAGE_TAG}" .
+                        docker build -t "${env.DOCKER_IMAGE_NAME}":latest .
+                        echo "build done!##########################"
                         docker login -u "$USERNAME" -p "$PASSWORD"
-                        docker push "${env.DOCKER_IMAGE_NAME}:${env.DOCKER_IMAGE_TAG}"
+                        echo "login done!!#########################"
+                        docker push "${env.DOCKER_IMAGE_NAME}":latest
+                        echo "push done############################"
                     '''
                 }
             }
