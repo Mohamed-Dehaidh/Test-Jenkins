@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         CREDENTIALS_ID = "jenkins-UP" // Or your registry credentials ID
-        DOCKER_IMAGE_NAME = "Mohamed-Dehaidh/Test-image" // Update with your details
+        DOCKER_IMAGE_NAME = "Mohamed-Dehaidh/Test-Jenkins/Test-image" // Update with your details
         DOCKER_IMAGE_TAG = "latest" // Or a specific tag like build number
     }
 
