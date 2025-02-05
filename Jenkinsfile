@@ -11,7 +11,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: env.DOCKER_CREDENTIALS_ID, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh '''
-                        docker build -t "${env.DOCKER_IMAGE_NAME}:latest"
+                        docker build -t "${env.DOCKER_IMAGE_NAME}:latest ."
                         docker login -u "$USERNAME" -p "$PASSWORD"
                         docker push "${env.DOCKER_IMAGE_NAME}:latest"
                     '''
