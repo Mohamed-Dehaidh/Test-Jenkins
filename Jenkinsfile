@@ -10,7 +10,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: env.CREDENTIALS_ID, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh '''
-                        docker build -t Mohamed-Dehaidh/Dockerfile:latest .
+                        docker build -t Mohamed-Dehaidh/dockerfile:latest .
                         docker login -u "$USERNAME" -p "$PASSWORD"
                         docker push Mohamed-Dehaidh/Dockerfile:latest
                     '''
